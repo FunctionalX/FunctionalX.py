@@ -1,4 +1,4 @@
-# FunctionalPython
+# FunctionalX
 A toolkit for performing functional programming in Python 3.
 All functions in this package meet the following the criteria:
 
@@ -8,5 +8,5 @@ All functions in this package meet the following the criteria:
 
 ### Author Information
 * author: Yuhang(Steven) Wang
-* date: 06/21/2016
+* date: 06/22/2016
 * license: MIT license
