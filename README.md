@@ -1,5 +1,6 @@
 # FunctionalX.py
-A toolkit for making it easy to do tasks using functions with referencial transparency. 
+A toolkit for making it easy to do tasks using functions with referential transparency. 
 
-* author: Yuhang(Steven) Wang
-* license: MIT license
+* Author: Yuhang(Steven) Wang
+* Project est. 06-22-2016
+* License: MIT license
