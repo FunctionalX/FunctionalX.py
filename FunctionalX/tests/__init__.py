@@ -1,8 +1,8 @@
-import FunctionalPython as FP 
-import list
+from . import lists
+from ._dashed_line import dashed_line
 
 def runtests():
-    list.runtests()
+    lists.runtests()
 
 if __name__ == "__main__":
     runtests()

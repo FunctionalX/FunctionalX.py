@@ -1,2 +1,2 @@
-from FunctionalPython import tests
+from FunctionalX import tests
 tests.runtests()
