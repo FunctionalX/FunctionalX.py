@@ -6,3 +6,8 @@ Usage: others(list1)
 Author: Yuhang(Steven) Wang
 Date: 06/21/2016
 """
+def tail(list1: list) -> list:
+    if len(list1) <= 1:
+        return []
+    else:
+        return list1[1:]

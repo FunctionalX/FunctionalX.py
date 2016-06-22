@@ -2,8 +2,8 @@
 Return an array given a dictionary"
 author: Yuhang(Steven) Wang
 date: 06/20/2016
-""
-def flatten_dict(d):
+"""
+def dict2list(d):
     def find_keys(obj):
         if isinstance(obj, dict):
             return [x for x in obj.keys()]

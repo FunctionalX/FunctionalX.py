@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   lists/cart2
+   lists/toc
    api/modules
 
 

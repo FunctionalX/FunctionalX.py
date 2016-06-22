@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cart2() &mdash; FunctionalX.py 0.0.1 documentation</title>
+  <title>cart_append() &mdash; FunctionalX.py 0.0.1 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="FunctionalX.py 0.0.1 documentation" href="../index.html"/>
         <link rel="up" title="FunctionalX.lists" href="toc.html"/>
-        <link rel="next" title="cart_append()" href="cart_append.html"/>
-        <link rel="prev" title="FunctionalX.lists" href="toc.html"/> 
+        <link rel="next" title="FunctionalX" href="../api/modules.html"/>
+        <link rel="prev" title="cart2()" href="cart2.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,8 +84,8 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="toc.html">FunctionalX.lists</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">cart2()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart_append.html">cart_append()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart2.html">cart2()</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cart_append()</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/modules.html">FunctionalX</a></li>
@@ -121,11 +121,11 @@
       
           <li><a href="toc.html">FunctionalX.lists</a> &raquo;</li>
       
-    <li>cart2()</li>
+    <li>cart_append()</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/lists/cart2.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/lists/cart_append.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -135,12 +135,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cart2">
-<h1>cart2()<a class="headerlink" href="#cart2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cart-append">
+<h1>cart_append()<a class="headerlink" href="#cart-append" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="FunctionalX.src.lists._cart2.cart2">
-<code class="descclassname">FunctionalX.src.lists._cart2.</code><code class="descname">cart2</code><span class="sig-paren">(</span><em>list1: list</em>, <em>list2: list</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="../_modules/FunctionalX/src/lists/_cart2.html#cart2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FunctionalX.src.lists._cart2.cart2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cartesian product of two lists.</p>
+<dt id="FunctionalX.src.lists._cart_append.cart_append">
+<code class="descclassname">FunctionalX.src.lists._cart_append.</code><code class="descname">cart_append</code><span class="sig-paren">(</span><em>list1</em>, <em>list2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/FunctionalX/src/lists/_cart_append.html#cart_append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FunctionalX.src.lists._cart_append.cart_append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append items from list2 to list1 for all possible pairs.</p>
+<p>Append an element from the second list to the each element from the first list
+therefore increase the number of elements in each item in the first list.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -151,8 +153,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a new list contains all Cartesian products of
-the two lists.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a new list.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#list" title="(in Python v2.7)">list</a></p>
@@ -160,8 +161,8 @@ the two lists.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cart2</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="go">[[&#39;a&#39;,1],[&#39;a&#39;,2],[&#39;b&#39;,1], [&#39;b&#39;,2]]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cart_append</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">])</span> 
+<span class="go">[[1,2,&#39;a&#39;], [1,2,&#39;b&#39;]]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -175,10 +176,10 @@ the two lists.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cart_append.html" class="btn btn-neutral float-right" title="cart_append()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../api/modules.html" class="btn btn-neutral float-right" title="FunctionalX" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="toc.html" class="btn btn-neutral" title="FunctionalX.lists" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cart2.html" class="btn btn-neutral" title="cart2()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
