@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='FunctionalPython',
+    name='FunctionalX',
     version='0.0.4',
 
     description='Functional programming in Python toolkit',
