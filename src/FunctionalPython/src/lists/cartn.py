@@ -13,7 +13,7 @@ def cartn(*all_lists):
         elif len(lists) == 1:
             return cart2(base_list, lists[0])
         else:
-            return aux(cart2(base_list, lists[0]), lists[1:])
+            return aux(cart_append(base_list, lists[0]), lists[1:])
     if len(all_lists) == 0:
         return []
     elif len(all_lists) == 1:
@@ -23,4 +23,5 @@ def cartn(*all_lists):
 
 if __name__ == "__main__":
     from cart2 import cart2
-    print(cartn(['a','b'], [1,2], ['A','B','C']))
+    from cart_append import cart_append
+    print(cartn(['a','b'], [1,2], ['A','B']))
