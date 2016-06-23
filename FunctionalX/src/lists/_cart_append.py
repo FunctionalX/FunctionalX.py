@@ -28,8 +28,3 @@ def cart_append(list1, list2):
             return aux(list1, others(list2), accum + [list1 + [list2[0]]])
 
     return aux(list1, list2, [])
-
-if __name__ == "__main__":
-    results = cart_append([[1,2],[3,4]], ['A','B'])
-    assert(results == [[1, 2, 'A'], [1, 2, 'B'], [3, 4, 'A'], [3, 4, 'B']])
-    print(results)

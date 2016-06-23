@@ -1,16 +1,30 @@
-"""
-Return an array given a dictionary"
-author: Yuhang(Steven) Wang
-date: 06/20/2016
-"""
-def dict2list(d):
-    def find_keys(obj):
+def dict2list(d: dict) -> list:
+    """Return an array given a dictionary"
+   
+    :param dict d: input dictionary object 
+
+    :return: a list for possible combinations of keys/values
+    :rtype: list [['a', 1, 'A'], ['a', 2, 'B'], ['b', 3, 'C'], ['b', 4, 'D']]
+
+    >>> dict2list({
+        "a": {
+            1: "A",
+            2: "B"
+        },
+        "b": {
+            3: "C",
+            4: "D"
+        }
+        })
+    [['a', 1, 'A'], ['a', 2, 'B'], ['b', 3, 'C'], ['b', 4, 'D']]
+    """
+    def find_keys(obj: dict) -> list:
         if isinstance(obj, dict):
             return [x for x in obj.keys()]
         else:
             return []
         
-    def aux(obj, keys, atom_accum, result_accum):
+    def aux(obj: dict, keys, atom_accum: list, result_accum: list) -> list:
         if len(keys) == 0:
             return result_accum + [atom_accum + [obj]]
         elif len(keys) == 1:

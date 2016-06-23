@@ -1,27 +1,25 @@
-"""
-Cartesian product of n lists.
+from ._cart_append import cart_append
+from ._cart2 import cart2
+from ._tail import tail
 
-Usage: cartn(list1, list2, ...)
-Author: Yuhang(Steven) Wang
-Date: 06/21/2016
-Copyright: MIT license
-"""
-def cartn(*all_lists):
-    def aux(base_list, lists):
+def cartn(*all_lists: list) -> list:
+    """Cartesian product of n lists.
+
+    :param list *all_lists: variable number of lists
+    :return: a new list
+    :rtype: list  
+    >>> cartn(['a','b'], [1,2], ['A','B'])
+    [['a', 1, 'A'], ['a', 1, 'B'], ['a', 2, 'A'], ['a', 2, 'B'], ['b', 1, 'A'], ['b', 1, 'B'], ['b', 2, 'A'], ['b', 2, 'B']]  
+    """
+    def aux(base_list: list, lists: list) -> list:
         if len(lists) == 0:
             return base_list 
-        elif len(lists) == 1:
-            return cart2(base_list, lists[0])
         else:
-            return aux(cart_append(base_list, lists[0]), lists[1:])
+            return aux(cart_append(base_list, lists[0]), tail(lists))
+    
     if len(all_lists) == 0:
         return []
     elif len(all_lists) == 1:
-        return all_lists[0]
+        return all_lists
     else:
-        return aux(all_lists[0], all_lists[1:])
-
-if __name__ == "__main__":
-    from cart2 import cart2
-    from cart_append import cart_append
-    print(cartn(['a','b'], [1,2], ['A','B']))
+        return aux(cart2(all_lists[0], all_lists[1]), tail(all_lists[1:]))
