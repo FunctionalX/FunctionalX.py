@@ -5,9 +5,10 @@ from ._tail import tail
 def cartn(*all_lists: list) -> list:
     """Cartesian product of n lists.
 
-    :param list *all_lists: variable number of lists
+    :param list all_lists(vararg): variable number of lists
     :return: a new list
-    :rtype: list  
+    :rtype: list
+      
     >>> cartn(['a','b'], [1,2], ['A','B'])
     [['a', 1, 'A'], ['a', 1, 'B'], ['a', 2, 'A'], ['a', 2, 'B'], ['b', 1, 'A'], ['b', 1, 'B'], ['b', 2, 'A'], ['b', 2, 'B']]  
     """

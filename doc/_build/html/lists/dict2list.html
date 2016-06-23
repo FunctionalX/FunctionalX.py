@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>lists &mdash; FunctionalX.py 0.0.1 documentation</title>
+  <title>dict2list() &mdash; FunctionalX.py 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,9 @@
 
   
     <link rel="top" title="FunctionalX.py 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="cart2()" href="cart2.html"/>
-        <link rel="prev" title="Welcome to FunctionalX.py’s documentation!" href="../index.html"/> 
+        <link rel="up" title="lists" href="toc.html"/>
+        <link rel="next" title="FunctionalX" href="../api/modules.html"/>
+        <link rel="prev" title="cart_append()" href="cart_append.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,12 +83,11 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">lists</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="toc.html">lists</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cart2.html">cart2()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cartn.html">cartn()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cart_append.html">cart_append()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dict2list.html">dict2list()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tail.html">tail()</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dict2list()</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/modules.html">FunctionalX</a></li>
@@ -121,11 +121,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>lists</li>
+          <li><a href="toc.html">lists</a> &raquo;</li>
+      
+    <li>dict2list()</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/lists/toc.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/lists/dict2list.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -135,17 +137,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="lists">
-<h1>lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cart2.html">cart2()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cartn.html">cartn()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cart_append.html">cart_append()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dict2list.html">dict2list()</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tail.html">tail()</a></li>
-</ul>
+  <div class="section" id="dict2list">
+<h1>dict2list()<a class="headerlink" href="#dict2list" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="FunctionalX.src.lists._dict2list.dict2list">
+<code class="descclassname">FunctionalX.src.lists._dict2list.</code><code class="descname">dict2list</code><span class="sig-paren">(</span><em>d: dict</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="../_modules/FunctionalX/src/lists/_dict2list.html#dict2list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FunctionalX.src.lists._dict2list.dict2list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array given a dictionary&#8221;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>d</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; input dictionary object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list for possible combinations of keys/values</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list [[&#8216;a&#8217;, 1, &#8216;A&#8217;], [&#8216;a&#8217;, 2, &#8216;B&#8217;], [&#8216;b&#8217;, 3, &#8216;C&#8217;], [&#8216;b&#8217;, 4, &#8216;D&#8217;]]</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dict2list</span><span class="p">({</span>
+<span class="go">    &quot;a&quot;: {</span>
+<span class="go">        1: &quot;A&quot;,</span>
+<span class="go">        2: &quot;B&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;b&quot;: {</span>
+<span class="go">        3: &quot;C&quot;,</span>
+<span class="go">        4: &quot;D&quot;</span>
+<span class="go">    }</span>
+<span class="go">    })</span>
+<span class="go">[[&#39;a&#39;, 1, &#39;A&#39;], [&#39;a&#39;, 2, &#39;B&#39;], [&#39;b&#39;, 3, &#39;C&#39;], [&#39;b&#39;, 4, &#39;D&#39;]]</span>
+</pre></div>
 </div>
+</dd></dl>
+
 </div>
 
 
@@ -155,10 +179,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cart2.html" class="btn btn-neutral float-right" title="cart2()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../api/modules.html" class="btn btn-neutral float-right" title="FunctionalX" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to FunctionalX.py’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cart_append.html" class="btn btn-neutral" title="cart_append()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

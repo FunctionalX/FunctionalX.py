@@ -8,6 +8,15 @@ def tail(list1: list) -> list:
 
     :return: a new list 
     :rtype: list
+
+    >>> tail([])
+    []
+
+    >>> tail([1])
+    []
+
+    >>> tail([1,2,3])
+    [2,3]
     """
     if len(list1) <= 1:
         return []
