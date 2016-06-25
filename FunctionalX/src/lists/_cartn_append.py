@@ -4,10 +4,11 @@ from ._tail import tail
 def cartn_append(*list_of_lists: list) -> list:
     """Cartesian product of n lists.
     
-    The difference from `cartn` is that the first list 
-    is a list of lists and the elements of subsequent lists
-    are appended (inserted) to each sub-list of the first list
-    in a functionally recursive way.
+    The difference from `cartn` is that the first element
+    of the input `list_of_lists`
+    is itself a list of lists.
+    The elements from other lists
+    are appended (inserted) to each sub-list of the first list.
 
     :param list list_of_lists(vararg): variable number of lists
     :return: a new list

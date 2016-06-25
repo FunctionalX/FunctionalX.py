@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cartn() &mdash; FunctionalX.py 0.0.1 documentation</title>
+  <title>cartn_append() &mdash; FunctionalX.py 0.0.1 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="FunctionalX.py 0.0.1 documentation" href="../index.html"/>
         <link rel="up" title="lists" href="toc.html"/>
-        <link rel="next" title="cart_append()" href="cart2_append.html"/>
-        <link rel="prev" title="cart2()" href="cart2.html"/> 
+        <link rel="next" title="dict2list()" href="dict2list.html"/>
+        <link rel="prev" title="cart2_append()" href="cart2_append.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,9 +85,9 @@
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="toc.html">lists</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cart2.html">cart2()</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">cartn()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart2_append.html">cart_append()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cartn_append.html">cartn_append()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cartn.html">cartn()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart2_append.html">cart2_append()</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cartn_append()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dict2list.html">dict2list()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="head.html">head()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tail.html">tail()</a></li>
@@ -125,11 +125,11 @@
       
           <li><a href="toc.html">lists</a> &raquo;</li>
       
-    <li>cartn()</li>
+    <li>cartn_append()</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/lists/cartn.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/lists/cartn_append.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -139,17 +139,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cartn">
-<h1>cartn()<a class="headerlink" href="#cartn" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cartn-append">
+<h1>cartn_append()<a class="headerlink" href="#cartn-append" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="FunctionalX.src.lists._cartn.cartn">
-<code class="descclassname">FunctionalX.src.lists._cartn.</code><code class="descname">cartn</code><span class="sig-paren">(</span><em>*all_lists: list</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="../_modules/FunctionalX/src/lists/_cartn.html#cartn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FunctionalX.src.lists._cartn.cartn" title="Permalink to this definition">¶</a></dt>
+<dt id="FunctionalX.src.lists._cartn_append.cartn_append">
+<code class="descclassname">FunctionalX.src.lists._cartn_append.</code><code class="descname">cartn_append</code><span class="sig-paren">(</span><em>*list_of_lists: list</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="../_modules/FunctionalX/src/lists/_cartn_append.html#cartn_append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FunctionalX.src.lists._cartn_append.cartn_append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cartesian product of n lists.</p>
+<p>The difference from <cite>cartn</cite> is that the first element
+of the input <cite>list_of_lists</cite>
+is itself a list of lists.
+The elements from other lists
+are appended (inserted) to each sub-list of the first list.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>all_lists(vararg)</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#list" title="(in Python v2.7)"><em>list</em></a>) &#8211; variable number of lists</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>list_of_lists(vararg)</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#list" title="(in Python v2.7)"><em>list</em></a>) &#8211; variable number of lists</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a new list</td>
 </tr>
@@ -157,8 +162,8 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cartn</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span>
-<span class="go">[[&#39;a&#39;, 1, &#39;A&#39;], [&#39;a&#39;, 1, &#39;B&#39;], [&#39;a&#39;, 2, &#39;A&#39;], [&#39;a&#39;, 2, &#39;B&#39;], [&#39;b&#39;, 1, &#39;A&#39;], [&#39;b&#39;, 1, &#39;B&#39;], [&#39;b&#39;, 2, &#39;A&#39;], [&#39;b&#39;, 2, &#39;B&#39;]]  </span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cartn_append</span><span class="p">([[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;, 1, &#39;A&#39;], [&#39;a&#39;, &#39;b&#39;, 1, &#39;B&#39;], [&#39;a&#39;, &#39;b&#39;, 2, &#39;A&#39;], [&#39;a&#39;, &#39;b&#39;, 2, &#39;B&#39;], [&#39;c&#39;, &#39;d&#39;, 1, &#39;A&#39;], [&#39;c&#39;, &#39;d&#39;, 1, &#39;B&#39;], [&#39;c&#39;, &#39;d&#39;, 2, &#39;A&#39;], [&#39;c&#39;, &#39;d&#39;, 2, &#39;B&#39;]]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -172,10 +177,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cart2_append.html" class="btn btn-neutral float-right" title="cart_append()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dict2list.html" class="btn btn-neutral float-right" title="dict2list()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cart2.html" class="btn btn-neutral" title="cart2()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cart2_append.html" class="btn btn-neutral" title="cart2_append()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

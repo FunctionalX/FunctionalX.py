@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FunctionalX.src.lists._cartn &mdash; FunctionalX.py 0.0.1 documentation</title>
+  <title>FunctionalX.src.lists._cartn_append &mdash; FunctionalX.py 0.0.1 documentation</title>
   
 
   
@@ -114,7 +114,7 @@
       
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
       
-    <li>FunctionalX.src.lists._cartn</li>
+    <li>FunctionalX.src.lists._cartn_append</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -126,33 +126,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for FunctionalX.src.lists._cartn</h1><div class="highlight"><pre>
+  <h1>Source code for FunctionalX.src.lists._cartn_append</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">._cart2_append</span> <span class="kn">import</span> <span class="n">cart2_append</span>
-<span class="kn">from</span> <span class="nn">._cart2</span> <span class="kn">import</span> <span class="n">cart2</span>
 <span class="kn">from</span> <span class="nn">._tail</span> <span class="kn">import</span> <span class="n">tail</span>
 
-<div class="viewcode-block" id="cartn"><a class="viewcode-back" href="../../../../lists/cartn.html#FunctionalX.src.lists._cartn.cartn">[docs]</a><span class="k">def</span> <span class="nf">cartn</span><span class="p">(</span><span class="o">*</span><span class="n">all_lists</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<div class="viewcode-block" id="cartn_append"><a class="viewcode-back" href="../../../../lists/cartn_append.html#FunctionalX.src.lists._cartn_append.cartn_append">[docs]</a><span class="k">def</span> <span class="nf">cartn_append</span><span class="p">(</span><span class="o">*</span><span class="n">list_of_lists</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Cartesian product of n lists.</span>
+<span class="sd">    </span>
+<span class="sd">    The difference from `cartn` is that the first element</span>
+<span class="sd">    of the input `list_of_lists`</span>
+<span class="sd">    is itself a list of lists.</span>
+<span class="sd">    The elements from other lists</span>
+<span class="sd">    are appended (inserted) to each sub-list of the first list.</span>
 
-<span class="sd">    :param list all_lists(vararg): variable number of lists</span>
+<span class="sd">    :param list list_of_lists(vararg): variable number of lists</span>
 <span class="sd">    :return: a new list</span>
 <span class="sd">    :rtype: list</span>
 <span class="sd">      </span>
-<span class="sd">    &gt;&gt;&gt; cartn([&#39;a&#39;,&#39;b&#39;], [1,2], [&#39;A&#39;,&#39;B&#39;])</span>
-<span class="sd">    [[&#39;a&#39;, 1, &#39;A&#39;], [&#39;a&#39;, 1, &#39;B&#39;], [&#39;a&#39;, 2, &#39;A&#39;], [&#39;a&#39;, 2, &#39;B&#39;], [&#39;b&#39;, 1, &#39;A&#39;], [&#39;b&#39;, 1, &#39;B&#39;], [&#39;b&#39;, 2, &#39;A&#39;], [&#39;b&#39;, 2, &#39;B&#39;]]  </span>
+<span class="sd">    &gt;&gt;&gt; cartn_append([[&#39;a&#39;,&#39;b&#39;],[&#39;c&#39;,&#39;d&#39;]], [1,2], [&#39;A&#39;,&#39;B&#39;])</span>
+<span class="sd">    [[&#39;a&#39;, &#39;b&#39;, 1, &#39;A&#39;], [&#39;a&#39;, &#39;b&#39;, 1, &#39;B&#39;], [&#39;a&#39;, &#39;b&#39;, 2, &#39;A&#39;], [&#39;a&#39;, &#39;b&#39;, 2, &#39;B&#39;], [&#39;c&#39;, &#39;d&#39;, 1, &#39;A&#39;], [&#39;c&#39;, &#39;d&#39;, 1, &#39;B&#39;], [&#39;c&#39;, &#39;d&#39;, 2, &#39;A&#39;], [&#39;c&#39;, &#39;d&#39;, 2, &#39;B&#39;]]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">base_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">lists</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lists</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">base_list</span> 
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">cart2_append</span><span class="p">(</span><span class="n">base_list</span><span class="p">,</span> <span class="n">lists</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">tail</span><span class="p">(</span><span class="n">lists</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">aux</span><span class="p">([</span><span class="n">cart2_append</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">list_of_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="o">+</span> <span class="n">tail</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
     
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_lists</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_lists</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">all_lists</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">cart2</span><span class="p">(</span><span class="n">all_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">all_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">tail</span><span class="p">(</span><span class="n">all_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span></div>
+    <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">))</span></div>
 </pre></div>
 
            </div>
