@@ -23,7 +23,6 @@ def cartn_append(*list_of_lists: list) -> list:
         elif len(list_of_lists) == 1:
             return list_of_lists[0]
         else:
-            print(list_of_lists)
             return aux([cart2_append(list_of_lists[0], list_of_lists[1])] + tail(list_of_lists[1:]))
     
     return aux(list(list_of_lists))
