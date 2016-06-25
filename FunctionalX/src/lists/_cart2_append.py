@@ -1,4 +1,4 @@
-def cart_append(list1, list2):
+def cart2_append(list1, list2):
     """Append items from list2 to list1 for all possible pairs.
 
     Append an element from the second list to the each element from the first list

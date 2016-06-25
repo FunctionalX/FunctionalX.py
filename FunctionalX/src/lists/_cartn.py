@@ -1,4 +1,4 @@
-from ._cart_append import cart_append
+from ._cart2_append import cart2_append
 from ._cart2 import cart2
 from ._tail import tail
 
@@ -16,7 +16,7 @@ def cartn(*all_lists: list) -> list:
         if len(lists) == 0:
             return base_list 
         else:
-            return aux(cart_append(base_list, lists[0]), tail(lists))
+            return aux(cart2_append(base_list, lists[0]), tail(lists))
     
     if len(all_lists) == 0:
         return []
