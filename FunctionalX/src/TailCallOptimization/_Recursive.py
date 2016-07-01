@@ -1,4 +1,4 @@
-from .Tail import Tail
+from ._Tail import Tail
 """Recursive
 
 A wrapper class to used for transforming recursive functions 
