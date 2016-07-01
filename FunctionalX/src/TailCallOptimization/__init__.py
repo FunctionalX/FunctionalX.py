@@ -1,2 +1,2 @@
 from ._Tail import Tail
-from ._Recursive import _Recursive
+from ._Recursive import Recursive
