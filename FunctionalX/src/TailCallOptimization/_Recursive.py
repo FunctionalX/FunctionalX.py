@@ -21,6 +21,9 @@ class Recursive(object):
     def __init__(self, target_recursive_function):
         self.function = target_recursive_function
 
+    def call(self, *args, **kwargs):
+        return self.function(*args, **kwargs)
+        
     def __call__(self, *args, **kwargs):
         value = self.function(*args, **kwargs)
         while type(value) is Tail:
