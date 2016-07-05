@@ -17,5 +17,5 @@ def cart2(list1: list, list2: list) -> list:
         elif len(list1) == 1: # start to traverse list2
             return aux(list1, list2[1:], accum + [[list1[0], list2[0]]])
         else:
-            return aux(list1[1:], list2, aux(list1[0:1], list2, accum))
+            return aux(list1[1:], list2, aux([list1[0]], list2, accum))
     return aux(list1, list2, [])
